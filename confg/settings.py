@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account', #웹앱추가
-    'rest_framework', # 프레임워크 추가
+    'account',
+    'oauth',
+    'rest_framework',
 ]
 
 REST_FRAMEWORK = { # 권한 설정
@@ -113,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -131,3 +132,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Apple
+SOCIAL_AUTH_APPLE_KEY_ID = '2KK854USJ4'
+SOCIAL_AUTH_APPLE_TEAM_ID = 'PX37AVLC5L'
+CLIENT_ID = 'com.yunuki.RunningMate'
+SOCIAL_AUTH_APPLE_PRIVATE_KEY = '''-----BEGIN PRIVATE KEY-----
+MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgiACjPWZVf7eUqgin
+dZL/gbvyEiTO/WnGJ3JbVx6eCJSgCgYIKoZIzj0DAQehRANCAARcVVAUFZ970hAf
+hM2LWcQNIcAvBqPQU2fsg/CU7jrfdUKjNLry9uf80PkQ95ZRvPgxFaDmLGTlJZrh
+AztwDroD
+-----END PRIVATE KEY-----'''
