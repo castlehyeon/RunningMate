@@ -13,6 +13,15 @@ class AccountView(APIView):
         serializer = AccountSerializer(account)
         return Response(serializer.data)
 
+    @csrf_exempt
+    def put(self, request, pk):
+        nickname = request.data.get('nickname')
+        account = Account.objects.filter(pk=pk).first()
+        account.nickname = nickname
+        account.save()
+        serializer = AccountSerializer(account)
+        return Response(serializer.data)
+
 
 class AccountListView(APIView):
     @csrf_exempt

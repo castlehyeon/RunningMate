@@ -9,7 +9,7 @@ class OAuthAppleSerializer(serializers.ModelSerializer):
     is_new = serializers.SerializerMethodField(read_only=True)
 
     def get_is_new(self, obj):
-        return obj.account.name == ''
+        return obj.account.nickname == ''
 
     class Meta:
         model = OAuthApple
